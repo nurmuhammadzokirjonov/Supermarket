@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Market</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/css/">
+</head>
+<body>
+ 
+
+<header>
+    <div class="logo">🥬 Fresh Market</div>
+    <div class="search">
+        <input type="text" placeholder="Mahsulot qidirish...">
+        <button>Qidirish</button>
+    </div>
+    <div class="cart">🛒 Savat</div>
+</header>
+
+<nav>
+    <a href="#">Bosh sahifa</a>
+    <a href="#categories">Kategoriyalar</a>
+    <a href="#products">Mahsulotlar</a>
+    <a href="#discount">Chegirmalar</a>
+    <a href="#contact">Aloqa</a>
+</nav>
+
+<section class="hero" id="discount">
+    <div>
+        <h1>Yangi va sifatli mahsulotlar!</h1>
+        <p>Har kuni yangi mahsulotlar va ajoyib narxlar.</p>
+        <a href="#products" class="hero-btn">Xarid qilish</a>
+    </div>
+</section>
+
+<section class="container" id="categories">
+    <h2>Kategoriyalar</h2>
+    <div class="categories">
+        <div class="category">🍎<p>Mevalar</p></div>
+        <div class="category">🥦<p>Sabzavotlar</p></div>
+        <div class="category">🥛<p>Sut mahsulotlari</p></div>
+        <div class="category">🥩<p>Go'sht</p></div>
+        <div class="category">🍞<p>Non mahsulotlari</p></div>
+        <div class="category">🥤<p>Ichimliklar</p></div>
+    </div>
+</section>
+
+<section class="container" id="products">
+    <h2>Ommabop mahsulotlar</h2>
+
+    <div class="products">
+        {% for i in mahsulot %}
+        <div class="card">
+            <img src="{{i.image.url}}" alt="Olma">
+            <h3>{{i.name}}</h3>
+            <p>{{i.description}}</p>
+            <h4>{{i.price}}</h4>
+            <button>Savatga qo'shish</button>
+        </div>
+        {% endfor %}
+   
+    </div>
+</section>
+
+<footer id="contact">
+    <h2>Fresh Market</h2>
+    <p>Sifatli mahsulotlar — qulay narxlarda!</p>
+    <p>Telefon: +998 90 123 45 67</p>
+    <p>© 2026 Fresh Market. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+</body>
+</html>
